@@ -21,6 +21,18 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet("test")]
+    public IActionResult Test()
+    {
+        var result = new FeatureManagementModel
+        {
+            FeatureB = "value1",
+            FeatureA = "value2"
+        };
+        return Json(result);
+
+    }
+
     public IActionResult Privacy()
     {
         return View();
