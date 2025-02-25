@@ -26,7 +26,7 @@ public class HomeController : Controller
     {
         var result = new FeatureManagementModel
         {
-            Feature = "deneme deneme",
+            FeatureB = "test test",
             FeatureA = "cahit kafadar"
         };
         return Json(result);
