@@ -1,0 +1,17 @@
+2026-02-13 00:44:57.645 +03:00 [INF] Uygulama başlatılıyor...
+2026-02-13 00:44:59.497 +03:00 [WRN] The application is trying to access the ASP.NET Core developer certificate key. A prompt might appear to ask for permission to access the key. When that happens, select 'Always Allow' to grant 'dotnet' access to the certificate key in the future.
+2026-02-13 00:45:09.957 +03:00 [INF] Now listening on: https://localhost:7079
+2026-02-13 00:45:09.960 +03:00 [INF] Now listening on: http://localhost:5015
+2026-02-13 00:45:09.978 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-13 00:45:09.979 +03:00 [INF] Hosting environment: Development
+2026-02-13 00:45:09.979 +03:00 [INF] Content root path: /Users/cahityusufkafadar/Documents/Projects/Github/FeatureFlag/FeatureFlag/FeatureFlag/
+2026-02-13 00:45:18.140 +03:00 [INF] HTTP GET / responded 200 in 212.2301 ms
+2026-02-13 00:45:18.320 +03:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 200 in 100.6651 ms
+2026-02-13 00:45:18.323 +03:00 [INF] HTTP GET /css/site.css responded 200 in 0.7315 ms
+2026-02-13 00:45:18.342 +03:00 [INF] HTTP GET /FeatureFlag.styles.css responded 200 in 1.9889 ms
+2026-02-13 00:45:18.363 +03:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 200 in 6.9679 ms
+2026-02-13 00:45:18.396 +03:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 200 in 14.0329 ms
+2026-02-13 00:45:18.405 +03:00 [INF] HTTP GET /js/site.js responded 200 in 2.7301 ms
+2026-02-13 00:45:18.464 +03:00 [INF] HTTP GET /favicon.ico responded 200 in 4.8913 ms
+2026-02-13 00:47:36.098 +03:00 [INF] Application is shutting down...
+2026-02-13 00:47:36.133 +03:00 [INF] Uygulama kapatılıyor...
