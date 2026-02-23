@@ -1,4 +1,6 @@
+using FeatureFlag.Data;
 using FeatureFlag.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.FeatureManagement;
 using Serilog;
 
@@ -29,6 +31,8 @@ builder.Host.UseSerilog();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHealthChecks();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 var featureModel = new FeatureManagementModel();
 builder.Configuration.GetSection("FeatureManagement").Bind(featureModel);
 builder.Services.AddFeatureManagement(builder.Configuration.GetSection("FeatureManagement"));
@@ -57,6 +61,12 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapHealthChecks("/health");
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    await DbInitializer.InitializeAsync(context);
+}
 
 app.Run();
 }

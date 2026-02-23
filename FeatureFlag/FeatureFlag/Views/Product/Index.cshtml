@@ -1,0 +1,43 @@
+@model IEnumerable<FeatureFlag.Models.Product>
+@{
+    ViewData["Title"] = "Ürün Listesi";
+}
+
+<div class="container-fluid">
+    <h2 class="mb-4">Ürün Listesi</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Ürün Adı</th>
+                    <th>Açıklama</th>
+                    <th>Fiyat</th>
+                    <th>Stok</th>
+                    <th>Eklenme Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@(product.Description ?? "-")</td>
+                        <td>@product.Price.ToString("N2") ₺</td>
+                        <td>@product.Stock</td>
+                        <td>@product.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            Henüz ürün bulunmamaktadır. Veritabanı seed edilmemiş olabilir.
+        </div>
+    }
+</div>
