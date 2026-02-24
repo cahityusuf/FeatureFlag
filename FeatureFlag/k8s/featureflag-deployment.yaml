@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: featureflag
-          image: cahityusuf/featureflag:v1 #$(Build.BuildId)
+          image: cahityusuf/featureflag:tekton-6
           imagePullPolicy: Always
           ports:
             - containerPort: 80
