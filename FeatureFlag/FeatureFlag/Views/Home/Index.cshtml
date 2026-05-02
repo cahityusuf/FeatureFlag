@@ -2,13 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
+@inject IConfiguration Configuration
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p class="mb-3">
         <a asp-controller="Product" asp-action="Index" class="btn btn-primary btn-lg">Ürün Listesini Görüntüle</a>
     </p>
-    <h3 class="display-4">UserName: @Environment.GetEnvironmentVariable("Credentials:Username")</h3>
-    <h3 class="display-4">Password: @Environment.GetEnvironmentVariable("Credentials:Password")</h3>
+    <h3 class="display-4">UserName: @Configuration["Credentials:Username"]</h3>
+    <h3 class="display-4">Password: @Configuration["Credentials:Password"]</h3>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     
     <feature name="FeatureA">

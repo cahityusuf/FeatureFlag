@@ -62,11 +62,11 @@ app.MapControllerRoute(
 
 app.MapHealthChecks("/health");
 
-using (var scope = app.Services.CreateScope())
-{
-    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    await DbInitializer.InitializeAsync(context);
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//  //  var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+//    //await DbInitializer.InitializeAsync(context);
+//}
 
 app.Run();
 }
